@@ -5,6 +5,7 @@ import Modal from 'react-bootstrap/Modal';
 import axios from "axios";
 import { message } from 'antd';
 import { useNavigate } from 'react-router-dom';
+import img1 from "../images/vm-logo.png"
 const Login=()=>{
  const [input, setInput] = useState({});
  const [email, setEmail]= useState("");
@@ -59,7 +60,7 @@ const Login=()=>{
       window.localStorage.setItem("userName", res.data.name);
       window.localStorage.setItem("userEmail", res.data.email);
       window.localStorage.setItem("userid", res.data._id);
-      navigate("/dashboard");
+      navigate("/home");
      }).catch((err)=>{
 
        message.error(err.response.data);
@@ -74,8 +75,11 @@ const Login=()=>{
               <div id="headerlft">
 
               </div>
+              <div>
+                <img id="logo" src={img1}></img>
+              </div>
               <div id="headermdl">
-              Welcome To Expense Management System
+              Welcome To the new Flatform 
               </div>
               <div id="headerrgt">
               <Button variant="primary" onClick={handleShow}>User Registration</Button>
@@ -146,7 +150,7 @@ const Login=()=>{
 
  </div>
  <div style={{textAlign:"center"}}>
-    www.expensemamanegent.com all right reserved. 2024 &copy;
+    www.VM.com all right reserved. 2024 &copy;
  </div>
 
         </>

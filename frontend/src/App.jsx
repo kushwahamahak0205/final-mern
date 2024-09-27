@@ -1,21 +1,25 @@
 import {  BrowserRouter,  Routes,  Route} from 'react-router-dom';  
-import Layout from './Layout';
-import Home from './Component/Home';
-import Login from './Component/Login';
+
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
+
+import Layout from './Layout';
+import Login from './Component/Login';
+import Home from './Component/Home';
 const App=()=>{
  
  return(
   <>
   
-  <BrowserRouter>
-         <Routes>
-            <Route path='/' element={<Layout/>}  />
-         </Routes>
+      <BrowserRouter>
           <Routes>
-           <Route path='./login' element={<Login/>}/>
-         
+            <Route path='/' element={<Layout/>}>
+            <Route index element={<Login/>}/>
+             <Route path='/home' element={<Home/>}/>
+            
+            
+            </Route>
           </Routes>
+
        </BrowserRouter>
   
   
