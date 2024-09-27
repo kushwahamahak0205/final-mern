@@ -1,10 +1,7 @@
-
 const Home=()=>{
     return(
         <>
-        
-        Home
-        
+    home
         </>
     )
 }

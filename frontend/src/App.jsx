@@ -1,18 +1,27 @@
-import { BrowserRouter,Router,Route } from "react"
-import Layout from "./Layout"
-import { Component } from "react";
+import {  BrowserRouter,  Routes,  Route} from 'react-router-dom';  
+import Layout from './Layout';
+import Home from './Component/Home';
+import Login from './Component/Login';
+import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 const App=()=>{
-  return(
-    <>
-    
-    <BrowserRouter>
-        <Router>
-           <Route>
+ 
+ return(
+  <>
+  
+  <BrowserRouter>
+         <Routes>
+            <Route path='/' element={<Layout/>}  />
+         </Routes>
+          <Routes>
+           <Route path='./login' element={<Login/>}/>
+         
+          </Routes>
+       </BrowserRouter>
+  
+  
+  </>
+ )
 
-           </Route>
-        </Router>
-    </BrowserRouter>
-    </>
-  )
 }
+
 export default App;
